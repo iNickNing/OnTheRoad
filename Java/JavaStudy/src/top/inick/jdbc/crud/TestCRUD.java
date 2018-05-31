@@ -25,7 +25,7 @@ public class TestCRUD {
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery("select * from users");
 			List<User> list = new ArrayList<>();
-			//´¦Àí½á¹û
+			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			while(rs.next()) {
 				User user = new User();
 				user.setId(rs.getInt("id"));
@@ -45,4 +45,63 @@ public class TestCRUD {
 		}
 	}
 	
+	@Test
+	public void testInsert() {
+		Connection conn = null;
+		Statement stmt = null;
+		
+		try {
+			conn = DBUtils.getConnection();
+			stmt = conn.createStatement();
+			int i = stmt.executeUpdate("insert into users values(4, 'tom', '123', 'tom@163.com', '2015-09-28')");
+			if(i > 0) {
+				System.out.println("success");
+			}
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			DBUtils.closeAll(null, stmt, conn);
+		}
+		
+	}
+	
+	@Test
+	public void testUpdate() {
+		Connection conn = null;
+		Statement stmt = null;
+		
+		try {
+			conn = DBUtils.getConnection();
+			stmt = conn.createStatement();
+			int i = stmt.executeUpdate("update users set name = 'jerry' where id = 4");
+			if(i > 0) {
+				System.out.println("success");
+			} 
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			DBUtils.closeAll(null, stmt, conn);
+		}
+		
+	}
+	
+	@Test
+	public void testDelete() {
+		Connection conn = null;
+		Statement stmt = null;
+		
+		try {
+			conn = DBUtils.getConnection();
+			stmt = conn.createStatement();
+			int i = stmt.executeUpdate("delete from users where id = 4");
+			if(i > 0) {
+				System.out.println("success");
+			} 
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			DBUtils.closeAll(null, stmt, conn);
+		}
+		
+	}
 }
