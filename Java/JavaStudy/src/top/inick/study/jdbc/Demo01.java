@@ -14,7 +14,7 @@ public class Demo01 {
 		String USER = "root";
 		String PASSWORD = "root";
 		String DB_URL = "jdbc:mysql://localhost:3306/test?useSSL=false";  
-		// /// 默认本机
+		// /// 默认本机 
 		
 		//加载驱动程序
 		Class.forName("com.mysql.jdbc.Driver");
