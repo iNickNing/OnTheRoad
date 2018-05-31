@@ -104,11 +104,11 @@ public class Demo01 {
 		
 		//处理结果
 		while(rs.next()) {
-			System.out.println(rs.getObject(1));	//数据库从1开始
-			System.out.println(rs.getObject(2));
-			System.out.println(rs.getObject(3));
-			System.out.println(rs.getObject(4));
-			System.out.println(rs.getObject(5));
+			System.out.println(rs.getObject("id"));	//数据库从1开始
+			System.out.println(rs.getObject("name"));
+			System.out.println(rs.getObject("birthday"));
+			System.out.println(rs.getObject("email"));
+			System.out.println(rs.getObject("password"));
 			System.out.println("--------------");
 		}
 		
