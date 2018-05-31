@@ -39,7 +39,7 @@ public class LoginDemo {
 				u = new User();
 				u.setId(rs.getInt("id"));
 				u.setName(rs.getString("name"));
-				u.setPassword(rs.getString("password"));
+				u.setPassword(rs.getString("password")); 
 				u.setEmail(rs.getString("email"));
 				u.setBirthday(rs.getDate("birthday"));
 			}
