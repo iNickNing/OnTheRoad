@@ -37,7 +37,6 @@ public class TestCRUD {
 			rs = stmt.executeQuery("select * from users");
 			
 			List<User> list = new ArrayList<>();
-			
 			//处理结果
 			while(rs.next()) {
 				User user = new User();
