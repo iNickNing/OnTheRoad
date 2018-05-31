@@ -1,4 +1,4 @@
-package top.inick.study.jdbc;
+package top.inick.study.jdbc.demo;
 
 import java.sql.*;
 import java.util.Properties;
