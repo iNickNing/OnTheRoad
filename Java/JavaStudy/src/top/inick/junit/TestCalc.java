@@ -1,4 +1,4 @@
-package top.inick.study.junit;
+package top.inick.junit;
 
 import org.junit.Test;
 

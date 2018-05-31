@@ -1,4 +1,4 @@
-package top.inick.study.jdbc.demo;
+package top.inick.jdbc.demo;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -10,7 +10,7 @@ import java.util.List;
 
 import org.junit.Test;
 
-import top.inick.study.entity.User;
+import top.inick.entity.User;
 
 public class TestCRUD {
 	

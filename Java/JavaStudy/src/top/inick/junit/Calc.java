@@ -1,4 +1,4 @@
-package top.inick.study.junit;
+package top.inick.junit;
 
 public class Calc {
 

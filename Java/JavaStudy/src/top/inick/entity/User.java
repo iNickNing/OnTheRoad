@@ -1,4 +1,4 @@
-package top.inick.study.entity;
+package top.inick.entity;
 
 import java.util.Date;
 

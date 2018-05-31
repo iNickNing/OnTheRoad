@@ -1,4 +1,4 @@
-package top.inick.study.test;
+package top.inick.test;
 
 public class AssertDemo01 {
 
