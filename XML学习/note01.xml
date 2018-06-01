@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<books>
+	<book>
+		<name>数据库基础</name>
+		<price>&lt;79</price>
+		<data><![CDATA[if(a > b && b < c) {} <abc></abc>]]></data>
+	</book>
+
+</books>
