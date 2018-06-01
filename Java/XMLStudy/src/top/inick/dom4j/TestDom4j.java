@@ -5,6 +5,7 @@ import java.util.List;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
 import org.dom4j.Element;
+import org.dom4j.Node;
 import org.dom4j.io.SAXReader;
 import org.junit.Test;
 
@@ -23,6 +24,24 @@ public class TestDom4j {
 		String name = secondBook.element("书名").getText();
 		System.out.println(name);
 		
+	}
+	
+	@Test
+	public void test2() throws DocumentException {
+		SAXReader reader = new SAXReader();
+		Document document = reader.read("src/Book.xml");
+		Element root = document.getRootElement();
+		treeWalk(root);
+	}
+
+	private void treeWalk(Element ele) {
+		System.out.println(ele.getName());
+		for(int i = 0; i < ele.nodeCount(); i++) {
+			Node node = ele.node(i);
+			if(node instanceof Element) {
+				treeWalk((Element)node);
+			}
+		}
 	}
 
 }
