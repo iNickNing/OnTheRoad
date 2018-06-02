@@ -28,5 +28,16 @@ public class TestXPath {
 			System.out.println(node.getName() + "\t" + node.getText());
 		}
 	}
+	
+	@Test
+	public void test3() throws DocumentException {
+		SAXReader read = new SAXReader();
+		Document document = read.read("src/Dom4jTest.xml");
+		List list = document.selectNodes("/bookstore//book/title");
+		for(int i = 0; i < list.size(); i++) {
+			Node node = (Node)list.get(i);
+			System.out.println(node.getName() + "\t" + node.getText());
+		}
+	}
 
 }
