@@ -9,4 +9,18 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  
+  
+  <!-- 创建一个Servlet实例 -->
+  <servlet>
+  	<servlet-name>servletDemo01</servlet-name>
+  	<servlet-class>top.inick.servlet.ServletDemo01</servlet-class>
+  </servlet>
+  
+  <!-- 给Servlet提供(映射)一个可供用户端访问的URI -->
+  <servlet-mapping>
+  	<servlet-name>servletDemo01</servlet-name>
+  	<url-pattern>/demo01</url-pattern>
+  </servlet-mapping>
+  
 </web-app>
