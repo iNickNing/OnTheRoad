@@ -15,6 +15,9 @@
   <servlet>
   	<servlet-name>servletDemo01</servlet-name>
   	<servlet-class>top.inick.servlet.ServletDemo01</servlet-class>
+  	<load-on-startup>
+  		2<!-- 越小优先级越高 -->
+  	</load-on-startup>
   </servlet>
   
   <!-- 给Servlet提供(映射)一个可供用户端访问的URI -->
