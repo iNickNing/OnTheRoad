@@ -31,7 +31,10 @@ public class ServletDemo06 extends HttpServlet {
 		System.out.println("" + encoding);*/
 		
 		//String encoding = this.getServletConfig().getInitParameter("encoding");
-		String encoding = this.getInitParameter("encoding");
+		/*String encoding = this.getInitParameter("encoding");
+		System.out.println("" + encoding);*/
+		
+		String encoding = this.getServletContext().getInitParameter("encoding");
 		System.out.println("" + encoding);
 		/*ServletContext application = this.getServletContext();
 		

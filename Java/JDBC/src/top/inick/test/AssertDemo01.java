@@ -7,11 +7,16 @@ public class AssertDemo01 {
 	public static void main(String[] args) {
 		int i = 20;
 		System.out.println("test");
-		//Èç¹ûÆÚÍûÖµ²»·û£¬ ½«Å×³öAssertionError Òì³£
-		Assert.assertEquals(23, i, 0.4);
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½×³ï¿½AssertionError ï¿½ì³£
+		Assert.assertEquals(20, i, 0.4);
 		
 		System.out.println("ok");
 		
+		int[] arr = {13, 4, 4};
+		System.out.println(arr[0]);
 	}
 
+	public static void bb(int[] arr) {
+		arr[0] = arr[2];
+	}
 }
