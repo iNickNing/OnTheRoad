@@ -9,6 +9,11 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  	<context-param>  
+    <param-name>encoding</param-name>  
+    <param-value>UTF-8</param-value>  
+  </context-param>  
+  
   <servlet>
     <servlet-name>servletDemo01</servlet-name>
     <servlet-class>top.inick.servlet.ServletDemo01</servlet-class>
@@ -71,5 +76,13 @@
   <servlet-mapping>
     <servlet-name>servletDemo07</servlet-name>
     <url-pattern>/demo07</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>servletDemo08</servlet-name>
+    <servlet-class>top.inick.servlet.ServletDemo08</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>servletDemo08</servlet-name>
+    <url-pattern>/demo08</url-pattern>
   </servlet-mapping>
 </web-app>

@@ -13,10 +13,13 @@ public class AssertDemo01 {
 		System.out.println("ok");
 		
 		int[] arr = {13, 4, 4};
+		int[] arr2 = {5, 5, 45};
+		test(arr,arr2);
 		System.out.println(arr[0]);
 	}
 
-	public static void bb(int[] arr) {
-		arr[0] = arr[2];
+	public static void test(int[] arr, int[] arr2) {
+		arr[0] = 90;
+		arr = arr2;
 	}
 }
