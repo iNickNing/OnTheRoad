@@ -9,11 +9,10 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
-  	<context-param>  
-    <param-name>encoding</param-name>  
-    <param-value>UTF-8</param-value>  
-  </context-param>  
-  
+  <context-param>
+    <param-name>encoding</param-name>
+    <param-value>UTF-8</param-value>
+  </context-param>
   <servlet>
     <servlet-name>servletDemo01</servlet-name>
     <servlet-class>top.inick.servlet.ServletDemo01</servlet-class>
@@ -60,15 +59,14 @@
     <servlet-name>ServletDemo06</servlet-name>
     <servlet-class>top.inick.servlet.ServletDemo06</servlet-class>
     <init-param>
-    	<param-name>encoding</param-name>
-    	<param-value>UTF-8</param-value>
+      <param-name>encoding</param-name>
+      <param-value>UTF-8</param-value>
     </init-param>
   </servlet>
   <servlet-mapping>
     <servlet-name>ServletDemo06</servlet-name>
     <url-pattern>/demo06</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <servlet-name>servletDemo07</servlet-name>
     <servlet-class>top.inick.servlet.ServletDemo07</servlet-class>
@@ -84,5 +82,33 @@
   <servlet-mapping>
     <servlet-name>servletDemo08</servlet-name>
     <url-pattern>/demo08</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>servlet2Demo01</servlet-name>
+    <servlet-class>top.inick.servlet2.ServletDemo01</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>servlet2Demo01</servlet-name>
+    <url-pattern>/servlet2/demo01</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Servlet2Demo02</display-name>
+    <servlet-name>Servlet2Demo02</servlet-name>
+    <servlet-class>top.inick.servlet2.ServletDemo02</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Servlet2Demo02</servlet-name>
+    <url-pattern>/servlet2/demo02</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Servlet2Demo03</display-name>
+    <servlet-name>Servlet2Demo03</servlet-name>
+    <servlet-class>top.inick.servlet2.ServletDemo03</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Servlet2Demo03</servlet-name>
+    <url-pattern>/servlet2/demo03</url-pattern>
   </servlet-mapping>
 </web-app>
