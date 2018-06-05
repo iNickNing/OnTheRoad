@@ -111,4 +111,43 @@
     <servlet-name>Servlet2Demo03</servlet-name>
     <url-pattern>/servlet2/demo03</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Servlet2Demo04</display-name>
+    <servlet-name>Servlet2Demo04</servlet-name>
+    <servlet-class>top.inick.servlet2.ServletDemo04</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Servlet2Demo04</servlet-name>
+    <url-pattern>/servlet2/demo04</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Servlet2Demo05</display-name>
+    <servlet-name>Servlet2Demo05</servlet-name>
+    <servlet-class>top.inick.servlet2.ServletDemo05</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Servlet2Demo05</servlet-name>
+    <url-pattern>/servlet2/demo05</url-pattern>
+  </servlet-mapping>
+  
+  <!-- request练习的Servlet -->
+  <servlet>
+  	<servlet-name>requestServlet01</servlet-name>
+  	<servlet-class>top.inick.request.ServletDemo01</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>requestServlet01</servlet-name>
+  	<url-pattern>/request/demo01</url-pattern>
+  </servlet-mapping>
+  <servlet>
+  	<servlet-name>requestServlet02</servlet-name>
+  	<servlet-class>top.inick.request.ServletDemo02</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>requestServlet02</servlet-name>
+  	<url-pattern>/request/demo02</url-pattern>
+  </servlet-mapping>
+
 </web-app>
