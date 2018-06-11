@@ -149,5 +149,13 @@
   	<servlet-name>requestServlet02</servlet-name>
   	<url-pattern>/request/demo02</url-pattern>
   </servlet-mapping>
+  <servlet>
+  	<servlet-name>requestServlet03</servlet-name>
+  	<servlet-class>top.inick.request.ServletDemo03</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>requestServlet03</servlet-name>
+  	<url-pattern>/request/demo03</url-pattern>
+  </servlet-mapping>
 
 </web-app>

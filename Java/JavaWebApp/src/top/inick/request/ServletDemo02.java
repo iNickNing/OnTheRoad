@@ -15,7 +15,8 @@ public class ServletDemo02 extends HttpServlet {
 		
 //		demo01(req);
 //		demo02(req);
-		Enumeration names = req.getHeaderNames();
+		String name  = req.getHeader("Accept");
+		System.out.println(name);
 		
 	}
 
