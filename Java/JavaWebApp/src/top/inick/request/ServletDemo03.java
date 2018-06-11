@@ -11,6 +11,10 @@ public class ServletDemo03 extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
+		//告诉服务器要使用什么编码,注:浏览器使用的是什么编码,传过来的就是什么编码
+		req.setCharacterEncoding("UTF-8");
+		
 		String name = req.getParameter("name");
 		String sex = req.getParameter("sex");
 		String[] hobbys = req.getParameterValues("hobbys");
