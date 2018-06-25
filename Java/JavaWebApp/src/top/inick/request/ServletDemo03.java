@@ -24,6 +24,12 @@ public class ServletDemo03 extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
+		test01(req);
+		
+
+	}
+
+	private void test04(HttpServletRequest req) throws UnsupportedEncodingException {
 		try {
 			//告诉服务器要使用什么编码,注:浏览器使用的是什么编码,传过来的就是什么编码
 			req.setCharacterEncoding("UTF-8");
@@ -40,8 +46,6 @@ public class ServletDemo03 extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-
 	}
 
 	private void test03(HttpServletRequest req) throws UnsupportedEncodingException {
@@ -98,10 +102,10 @@ public class ServletDemo03 extends HttpServlet {
 	}
 
 	private void test01(HttpServletRequest req) {
-		String name = req.getParameter("name");
+		String userName = req.getParameter("userName");
 		String sex = req.getParameter("age");
 		String[] hobbys = req.getParameterValues("hobbys");
-		System.out.println(name);
+		System.out.println(userName);
 		System.out.println(sex);
 		if(hobbys != null) {
 			for(int i = 0; i < hobbys.length; i++) {

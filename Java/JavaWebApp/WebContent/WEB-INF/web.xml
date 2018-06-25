@@ -165,5 +165,21 @@
   	<servlet-name>requestServlet04</servlet-name>
   	<url-pattern>/request/demo04</url-pattern>
   </servlet-mapping>
+  <servlet>
+  	<servlet-name>requestServlet05</servlet-name>
+  	<servlet-class>top.inick.request.ServletDemo05</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>requestServlet05</servlet-name>
+  	<url-pattern>/request/demo05</url-pattern>
+  </servlet-mapping>
+  <servlet>
+  	<servlet-name>requestServlet06</servlet-name>
+  	<servlet-class>top.inick.request.ServletDemo06</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>requestServlet06</servlet-name>
+  	<url-pattern>/request/demo06</url-pattern>
+  </servlet-mapping>
 
 </web-app>

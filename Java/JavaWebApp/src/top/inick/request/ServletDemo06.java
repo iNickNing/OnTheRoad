@@ -8,19 +8,16 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class ServletDemo04 extends HttpServlet {
+public class ServletDemo06 extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		req.setCharacterEncoding("UTF-8");
-		System.out.println("ddddd4");
-		ServletInputStream sis = req.getInputStream();
-		int len = 0;
-		byte[] b = new byte[1024];
-		while((len = sis.read(b)) != -1) {
-			System.out.println(new String(b, 0, len));
-		}
-		sis.close();
+		req.setCharacterEncoding("UtF-8");
+		resp.setContentType("text/html;charset=UTF-8");
+		resp.setCharacterEncoding("UTF-8");
+		
+		System.out.println(req.getAttribute("s"));
+
 	}
 
 	@Override
