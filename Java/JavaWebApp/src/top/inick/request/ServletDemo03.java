@@ -24,7 +24,8 @@ public class ServletDemo03 extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		test01(req);
+		resp.setStatus(404);
+		//test01(req);
 		
 
 	}
