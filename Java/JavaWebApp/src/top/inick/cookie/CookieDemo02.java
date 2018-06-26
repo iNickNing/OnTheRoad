@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class CookieDemo01 extends HttpServlet {
+public class CookieDemo02 extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -25,10 +25,14 @@ public class CookieDemo01 extends HttpServlet {
 			}
 		}
 		
+		out.print("<a href='"+req.getContextPath()+"/cookie/clear'>clear</a>");
 		//创建cookie,并把信息写到客户端
 		Cookie ck = new Cookie("LastAccessTime", System.currentTimeMillis() + "");
-		System.out.println(ck.getMaxAge());//cookie的有效期
+//		System.out.println(ck.getMaxAge());//cookie的有效期
 		ck.setMaxAge(60 * 5);//设置cookie有效期5分钟
+		ck.setPath("/");//设置cookie路径
+//		ck.setPath(req.getContextPath());
+		
 		//将Cookie写回客户端
 		resp.addCookie(ck);
 	}

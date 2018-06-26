@@ -181,7 +181,7 @@
   	<servlet-name>requestServlet06</servlet-name>
   	<url-pattern>/request/demo06</url-pattern>
   </servlet-mapping>
-    <servlet>
+  <servlet>
   	<servlet-name>cookieServlet01</servlet-name>
   	<servlet-class>top.inick.cookie.CookieDemo01</servlet-class>
   </servlet>
@@ -189,5 +189,38 @@
   	<servlet-name>cookieServlet01</servlet-name>
   	<url-pattern>/cookie/demo01</url-pattern>
   </servlet-mapping>
+  <servlet>
+  	<servlet-name>cookieServlet02</servlet-name>
+  	<servlet-class>top.inick.cookie.CookieDemo02</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>cookieServlet02</servlet-name>
+  	<url-pattern>/cookie/demo02</url-pattern>
+  </servlet-mapping>
+  <servlet>
+  	<servlet-name>clearServlet</servlet-name>
+  	<servlet-class>top.inick.cookie.ClearServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>clearServlet</servlet-name>
+  	<url-pattern>/cookie/clear</url-pattern>
+  </servlet-mapping>
 
+  <servlet>
+  	<servlet-name>cookieLoginServlet</servlet-name>
+  	<servlet-class>top.inick.cookie.LoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>cookieLoginServlet</servlet-name>
+  	<url-pattern>/cookie/login</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>cookieDoLoginServlet</servlet-name>
+  	<servlet-class>top.inick.cookie.DoLoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>cookieDoLoginServlet</servlet-name>
+  	<url-pattern>/cookie/doLogin</url-pattern>
+  </servlet-mapping>
 </web-app>
