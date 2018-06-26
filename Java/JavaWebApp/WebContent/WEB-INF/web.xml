@@ -181,5 +181,13 @@
   	<servlet-name>requestServlet06</servlet-name>
   	<url-pattern>/request/demo06</url-pattern>
   </servlet-mapping>
+    <servlet>
+  	<servlet-name>cookieServlet01</servlet-name>
+  	<servlet-class>top.inick.cookie.CookieDemo01</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>cookieServlet01</servlet-name>
+  	<url-pattern>/cookie/demo01</url-pattern>
+  </servlet-mapping>
 
 </web-app>
