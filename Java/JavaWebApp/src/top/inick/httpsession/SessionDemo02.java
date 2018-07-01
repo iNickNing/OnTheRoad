@@ -29,6 +29,7 @@ public class SessionDemo02 extends HttpServlet {
 		} else {
 			out.println("你不能直接访问此资源！"); 
 		}
+		out.println(session.getId());
 	}
 
 	@Override
