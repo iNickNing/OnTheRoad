@@ -27,7 +27,7 @@ public class SessionDemo02 extends HttpServlet {
 			System.out.println(name);
 			out.println(name);
 		} else {
-			out.println("你不能直接访问此资源！");
+			out.println("你不能直接访问此资源！"); 
 		}
 	}
 
