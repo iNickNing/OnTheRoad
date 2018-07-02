@@ -12,10 +12,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import cn.dsna.util.images.ValidateCode;
 import top.inick.entity.Book;
 import top.inick.util.DBUtil;
 
-public class AddCart  extends HttpServlet {
+public class CodeServlet  extends HttpServlet {
 
 	/**
 	 * 
@@ -24,24 +25,10 @@ public class AddCart  extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		resp.setContentType("text/html;charset=UTF-8");
-		PrintWriter out = resp.getWriter();
-		//根据id得到书
-		String id = req.getParameter("id");
-		Book book = DBUtil.findBookById(id);
-		//得到session
-		HttpSession session = req.getSession();
-		//从session中取出list（购物车） 如果客户端禁用cookie，用 response.eccodeURL() 包装一下url
-		List<Book> list = (List<Book>) session.getAttribute("cart");
-		
-		if(list == null) {
-			list = new ArrayList<Book>();
-		}
-		list.add(book);
-		
-		session.setAttribute("cart", list);
-		out.print("添加成功，2秒返回<br/>");
-		resp.setHeader("refresh", "2;url="+req.getContextPath()+"/session/showAllBooks");
+		ValidateCode vc = new ValidateCode(110, 25, 4, 9);
+		//向session中保存验证码
+		req.getSession().setAttribute("scode", vc.getCode());
+		vc.write(resp.getOutputStream());
 		
 	}
 
