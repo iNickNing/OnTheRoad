@@ -251,7 +251,29 @@
     <servlet-name>SessionDemo01</servlet-name>
     <url-pattern>/session/demo01</url-pattern>
   </servlet-mapping>
-  
-  
+  <servlet>
+    <servlet-name>SessionShowAllBooks</servlet-name>
+    <servlet-class>top.inick.httpsession.ShowAllBooksServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SessionShowAllBooks</servlet-name>
+    <url-pattern>/session/showAllBooks</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>SessionAddCart</servlet-name>
+    <servlet-class>top.inick.httpsession.AddCart</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SessionAddCart</servlet-name>
+    <url-pattern>/session/addCart</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>SessionShowCart</servlet-name>
+    <servlet-class>top.inick.httpsession.ShowCart</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SessionShowCart</servlet-name>
+    <url-pattern>/session/showCart</url-pattern>
+  </servlet-mapping>
   
 </web-app>

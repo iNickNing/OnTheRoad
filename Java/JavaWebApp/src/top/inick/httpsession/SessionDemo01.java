@@ -22,6 +22,7 @@ public class SessionDemo01 extends HttpServlet {
 		System.out.println(name);
 		HttpSession session = req.getSession();
 		session.setAttribute("name", name);
+		resp.getWriter().write(session.getId());
 	}
 
 	@Override
