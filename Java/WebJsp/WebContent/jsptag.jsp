@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8" %>
+<%@ page errorPage="error.jsp" isELIgnored="false" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -12,13 +13,13 @@
 	<%-- JSP注释 --%>
 
 	<%!
-		int num1 = 10;
+		int num1 = 100;
 		public void show() {
 			System.out.println("bababab");
 		}
 	%>
 	<%
-		int num2 = 10;
+		int num2 = 100;
 		num1++;
 		num2++;
 		int i = 18;
@@ -28,7 +29,7 @@
 	<%=i %>
 	<%=num1 %>
 	<%=num2 %>
-	
+	${1 + 1}
 	
 </body>
 </html>
