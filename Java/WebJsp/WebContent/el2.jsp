@@ -14,7 +14,7 @@
 		Student stu = (Student)request.getAttribute("stu");
 		
 		out.println(":" + stu.getCity().getAddress() + "<br/>");
-		
+		 
 		
 	%>
 	
