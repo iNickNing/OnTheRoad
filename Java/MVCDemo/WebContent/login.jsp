@@ -7,6 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
+
+${msg }
 	<form action="${pageContext.request.contextPath }/servlet/loginServlet" method="post">
 		用户名：<input type="text" name="username" /><br/>
 		密码：<input type="password" name="password" /><br/>

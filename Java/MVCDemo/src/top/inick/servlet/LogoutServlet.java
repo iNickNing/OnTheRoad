@@ -25,7 +25,6 @@ public class LogoutServlet extends HttpServlet {
        
     public LogoutServlet() {
         super();
-
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

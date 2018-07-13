@@ -8,11 +8,11 @@
 </head>
 <body>
 	<form action="${pageContext.request.contextPath }/servlet/regServlet">
-		用户名:<input type="text" name="username"/><br/>
-		密码:<input type="password" name="password"/><br/>
-		确认密码:<input type="password" name="repassword"/><br/>
-		邮箱:<input type="text" name="email"/><br/>
-		生日:<input type="text" name="birthday"/><br/>
+		用户名:<input type="text" name="username" value="${uf.username }"/>${uf.msg.username }<br/>
+		密码:<input type="password" name="password"value="${uf.password }"/>${uf.msg.password }<br/>
+		确认密码:<input type="password" name="repassword"value="${uf.repassword }"/>${uf.msg.repassword }<br/>
+		邮箱:<input type="text" name="email"value="${uf.email }"/>${uf.msg.email }<br/>
+		生日:<input type="text" name="birthday"value="${uf.birthday }"/>${uf.msg.birthday }<br/>
 		<input type="submit" value="注册">
 	</form>
 </body>

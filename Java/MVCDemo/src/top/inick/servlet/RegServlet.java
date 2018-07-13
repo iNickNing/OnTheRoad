@@ -17,6 +17,7 @@ import org.apache.commons.beanutils.Converter;
 import org.apache.commons.beanutils.locale.converters.DateLocaleConverter;
 
 import top.inick.domain.User;
+import top.inick.domain.UserForm;
 import top.inick.service.UserService;
 import top.inick.service.impl.UserServiceImpl;
 
@@ -32,6 +33,21 @@ public class RegServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html;charset=utf-8");
 		//获取表单数据
+		
+		UserForm uf = new UserForm();
+		try {
+			BeanUtils.populate(uf, request.getParameterMap());
+		} catch (Exception e1) {
+			e1.printStackTrace();
+		}
+		
+		System.out.println(uf);
+		if(!uf.validate()) {		//如果map不为空,说明有错误信息
+			request.setAttribute("uf",uf);
+			request.getRequestDispatcher("/reg.jsp").forward(request, response);
+			return;
+		}
+		
 		User user = new User();
 		try {
 			/*ConvertUtils.register(new Converter() {

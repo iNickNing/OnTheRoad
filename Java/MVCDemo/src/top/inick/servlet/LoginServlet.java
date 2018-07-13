@@ -17,6 +17,7 @@ import org.apache.commons.beanutils.Converter;
 import org.apache.commons.beanutils.locale.converters.DateLocaleConverter;
 
 import top.inick.domain.User;
+import top.inick.exception.UsersException;
 import top.inick.service.UserService;
 import top.inick.service.impl.UserServiceImpl;
 
@@ -34,26 +35,31 @@ public class LoginServlet extends HttpServlet {
 		//获取表单数据
 		User user = new User();
 		try {
-			
 			BeanUtils.populate(user, request.getParameterMap());
+				
 			//调用业务逻辑
 			UserService us = new UserServiceImpl();
-			User u = us.login(user);
+			User u;
+			u = us.login(user);
+			
 			//分发转向
 			if(u != null) {
 				//如果登录成功,把user对象放到session对象
 				request.setAttribute("u", user);
 				request.getRequestDispatcher("/index.jsp").forward(request, response);
-			} else {	//登录失败则调回登录页面
-				response.sendRedirect(request.getContextPath() + "/login.jsp");
-				
 			}
-		} catch (Exception e) {
+		} catch (IllegalAccessException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
+		} catch (InvocationTargetException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (UsersException e) {
+			// TODO Auto-generated catch block
+			request.setAttribute("msg", e.getMessage());
+			request.getRequestDispatcher("/login.jsp").forward(request, response);
+			
 		}
-		
-		
-		
 		
 	}
 

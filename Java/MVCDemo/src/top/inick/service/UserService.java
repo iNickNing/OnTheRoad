@@ -1,6 +1,7 @@
 package top.inick.service;
 
 import top.inick.domain.User;
+import top.inick.exception.UsersException;
 
 public interface UserService {
 	/**
@@ -15,5 +16,5 @@ public interface UserService {
 	 * @param user
 	 * @return
 	 */
-	public User login(User user);
+	public User login(User user) throws UsersException;
 }
