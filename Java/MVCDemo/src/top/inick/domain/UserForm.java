@@ -20,7 +20,7 @@ public class UserForm {
 	确认密码：和密码保持一致<br>
 	邮箱：必须输入，且要符合邮箱的格式<br>
 	生日：必须输入，符合yyyy-MM-dd的格式<br>*/
-
+ 
 	public boolean validate() {
 		
 		if("".equals(this.username)) {
