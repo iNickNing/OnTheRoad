@@ -15,7 +15,7 @@ public class DBUtils {
 	private static String password;
 	
 	static {
-		ResourceBundle rb = ResourceBundle.getBundle("dbinfo");
+		ResourceBundle rb = ResourceBundle.getBundle("DBInfo");
 		driverClass = rb.getString("driverClass");
 		url = rb.getString("url");
 		username = rb.getString("username");

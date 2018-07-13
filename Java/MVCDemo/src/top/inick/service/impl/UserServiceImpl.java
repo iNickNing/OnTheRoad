@@ -11,7 +11,19 @@ public class UserServiceImpl implements UserService {
 	
 
 	public void register(User user) throws Exception {
-		
+		userDao.addUser(user);
+	}
+
+
+	@Override
+	public User login(User user) {
+		User u = null;
+		try {
+			u = userDao.findUser(user);
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+		return u;
 	}
 
 }

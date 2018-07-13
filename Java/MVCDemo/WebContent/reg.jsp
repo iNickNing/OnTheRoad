@@ -7,9 +7,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="">
+	<form action="${pageContext.request.contextPath }/servlet/regServlet">
 		用户名:<input type="text" name="username"/><br/>
-		用户名:<input type="text" name="username"/><br/>
+		密码:<input type="password" name="password"/><br/>
+		确认密码:<input type="password" name="repassword"/><br/>
+		邮箱:<input type="text" name="email"/><br/>
+		生日:<input type="text" name="birthday"/><br/>
+		<input type="submit" value="注册">
 	</form>
 </body>
 </html>
