@@ -13,11 +13,17 @@ public interface UserDao {
 	public boolean addUser(User user) throws Exception;
 	
 	/**
-	 * 根据要求查找用户
+	 * 根据用户名和密码查找用户
 	 * @param user
 	 * @return
 	 * @throws Exception
 	 */
 	public User findUser(User user) throws Exception;
 	
+	/**
+	 * 根据用户名查找用户是否存在
+	 * @param username
+	 * @return
+	 */
+	public boolean findUserByName(String username);
 }

@@ -7,7 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="${pageContext.request.contextPath }/servlet/regServlet">
+${error }
+	<form action="${pageContext.request.contextPath }/servlet/regServlet" method="post">
 		用户名:<input type="text" name="username" value="${uf.username }"/>${uf.msg.username }<br/>
 		密码:<input type="password" name="password"value="${uf.password }"/>${uf.msg.password }<br/>
 		确认密码:<input type="password" name="repassword"value="${uf.repassword }"/>${uf.msg.repassword }<br/>

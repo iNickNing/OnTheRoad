@@ -3,6 +3,7 @@ package top.inick.service.impl;
 import top.inick.dao.UserDao;
 import top.inick.dao.impl.UserDaoImpl;
 import top.inick.domain.User;
+import top.inick.exception.UserExistException;
 import top.inick.exception.UsersException;
 import top.inick.service.UserService;
 
@@ -29,6 +30,16 @@ public class UserServiceImpl implements UserService {
 			throw new UsersException("用户或密码不正确");
 		}
 		return u;
+	}
+
+
+	@Override
+	public boolean findUserByName(String username) throws UserExistException {
+		boolean b = userDao.findUserByName(username);
+		if(b) {
+			throw new UserExistException("用户已存在");
+		}
+		return b;
 	}
 
 }
