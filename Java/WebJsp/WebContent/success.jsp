@@ -13,7 +13,15 @@
 		out.write("欢迎您:" + name);
 	
 	%>
-	
+	<br/>
+	${username } 这是从Attribute中取的
+	<br/>
+	${param.username } 这是从Parameter中取的
+	<br/>
+	${header["User-agent"] }
+	<br/>
+	${cookie.JSESSIONID.value }
+	<br/>
 	<a href="/WebJsp/index.jsp">返回主页</a>
 </body>
 </html>

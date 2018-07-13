@@ -17,12 +17,15 @@
 	
 	%>
 
-	<form action="/WebJsp/jspTest/doLogin">
+	<!-- <form action="/WebJsp/jspTest/doLogin"> -->
+	<form action="${pageContext.request.contextPath }/jspTest/doLogin">
 	
 		用户名:<input type="text" name="username"><br/>
 		密码：<input type="password" name="pwd"><br/>
 		<input type="submit" value="登录">
 	
 	</form>
+	
+	${ requestScope }
 </body>
 </html>

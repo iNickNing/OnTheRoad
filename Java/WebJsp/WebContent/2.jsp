@@ -19,6 +19,8 @@
 		out.println("session:p=" + p3 + "<br/>");
 		out.println("application:p=" + p4 + "<br/>");
 	%>
+	
+	${applicationScope.p } <br/>
 
 </body>
 </html>

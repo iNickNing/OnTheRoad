@@ -3,6 +3,13 @@ package top.inick.entity;
 public class Student {
 	private String name;
 	private String password;
+	private City city;
+	public City getCity() {
+		return city;
+	}
+	public void setCity(City city) {
+		this.city = city;
+	}
 	public String getName() {
 		return name;
 	}

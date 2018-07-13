@@ -11,16 +11,17 @@
 	
 	<%
 	
-		Student stu = new Student();	
-		stu.setName("TOM");
-		stu.setCity(new City());
-		out.println("name:" + stu.getName() + "<br/>");
-		request.setAttribute("stu", stu);
-		request.getRequestDispatcher("/el2.jsp").forward(request, response);
+		Student stu = (Student)request.getAttribute("stu");
+		
+		out.println(":" + stu.getCity().getAddress() + "<br/>");
+		
+		
 	%>
 	
-	
-	
-
+	${stu}  <%-- ${stu } == pageContext.findAttribute("stu"); --%>
+	<br/>
+	${stu.name}		<!-- 走的getName(), 属性导航 -->
+	<br/>
+	${stu.city.address}
 </body>
 </html>
