@@ -17,6 +17,8 @@ public class TestTransaction {
 		
 		try {
 			conn = DBUtils.getConnection();
+			conn.setTransactionIsolation(Connection.TRANSACTION_REPEATABLE_READ);
+			//mysql默认级别 repeatable read
 			conn.setAutoCommit(false); //相当于开启事务 begin | start transaction
 			ps = conn.prepareStatement(" update account set money = money - 100 where id = 1");
 			ps.executeUpdate();
