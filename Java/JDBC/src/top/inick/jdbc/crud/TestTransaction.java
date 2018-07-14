@@ -17,12 +17,12 @@ public class TestTransaction {
 		
 		try {
 			conn = DBUtils.getConnection();
-			conn.setAutoCommit(false); //相当于开启事务
+			conn.setAutoCommit(false); //相当于开启事务 begin | start transaction
 			ps = conn.prepareStatement(" update account set money = money - 100 where id = 1");
 			ps.executeUpdate();
 			ps = conn.prepareStatement(" update account set money = money + 100 where id = 2");
 			ps.executeUpdate();
-			conn.commit();
+			conn.commit();		//commit
 		} catch (SQLException e) {
 			try {
 				conn.rollback();
