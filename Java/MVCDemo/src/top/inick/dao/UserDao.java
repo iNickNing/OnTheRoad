@@ -5,7 +5,7 @@ import top.inick.domain.User;
 public interface UserDao {
 
 	/**
-	 * 添加用户信息 
+	 * 添加用户信息
 	 * @param user
 	 * @return
 	 * @throws Exception
