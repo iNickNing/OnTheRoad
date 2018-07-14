@@ -12,7 +12,7 @@ public class LoginDemo {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 		System.out.println("请输入用户名：");
-		String name = input.nextLine();
+		String name = input.nextLine(); 
 		System.out.println("请输入密码：");
 		String password = input.nextLine();
 		User u = findUser(name, password);
