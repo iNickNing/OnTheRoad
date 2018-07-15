@@ -8,10 +8,11 @@ import org.apache.commons.dbutils.handlers.BeanHandler;
 import top.inick.dao.AccountDao;
 import top.inick.domain.Account;
 import top.inick.util.C3P0Utils;
+import top.inick.util.ThreadLocalManager;
 
 public class AccountDaoImpl implements AccountDao {
 
-	private Connection conn;
+	
 	
 	
 	@Override
@@ -25,13 +26,13 @@ public class AccountDaoImpl implements AccountDao {
 	@Override
 	public void updateAccount(Account account) throws Exception {
 		QueryRunner qr = new QueryRunner();
-		qr.update(conn,"update account set money=? where name=?",account.getMoney(), account.getName());
+		qr.update(ThreadLocalManager.getConnection(),"update account set money=? where name=?",account.getMoney(), account.getName());
 	}
 
 	@Override
 	public Account findAccountByName(String name) throws Exception {
 		QueryRunner qr = new QueryRunner();
-		return qr.query(conn,"select * from account where name=?", new BeanHandler<Account>(Account.class), name);
+		return qr.query(ThreadLocalManager.getConnection(),"select * from account where name=?", new BeanHandler<Account>(Account.class), name);
 	}
 
 }
