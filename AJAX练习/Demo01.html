@@ -6,13 +6,37 @@
 </head>
 <body>
 	<script type="text/javascript">
-		var XHRObject;
-		if(window.XMLHttpRequest) {
-			XHRObject = new XMLHttpRequest();
-		} else {
-			XHRObject = new ActiveXObject("Microsoft.XMLHTTP");
+		//创建XMLHttpRequest对象
+		function getXHRObject() {
+			var XHRObject;
+			if(window.XMLHttpRequest) {
+				XHRObject = new XMLHttpRequest();
+			} else {
+				XHRObject = new ActiveXObject("Microsoft.XMLHTTP");
+			}
+			return XHRObject;
 		}
-		alert(XHRObject);
+
+		//获取到XMLHttpRequest对象
+		var req = getXHRObject();
+
+		//设置事件处理器
+		req.onreadystatechange = function() {
+			//alert(req.readyState);
+
+			if(req.readyState == 4) {
+				alert(req.status);
+			}
+		};
+
+		//创建连接
+		req.open("get","http://inick.top/");
+		//发送请求
+		req.send(null);
+
+
+
+
 	</script>
 </body>
 </html>
