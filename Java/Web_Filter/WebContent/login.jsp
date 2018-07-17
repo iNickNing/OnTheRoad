@@ -1,7 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
-<%@ page import="top.inick.domain.User" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -9,14 +7,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-三生三世
-<%
-	//session.invalidate();
-/* 	request.setAttribute("name", "tom");
-	request.setAttribute("name", "jsck");
-	request.removeAttribute("name"); */
-	
-	session.setAttribute("user", new User());
-%>
+	${msg }
+	<form action="${pageContext.request.contextPath }/loginServlet" method="get" >
+		username:<input type="text" name="username"><br/>
+		password:<input type="password" name="password"><br/>
+		<input type="checkbox" name="rememberme">remember me<br/>
+		<input type="submit" value="login" />
+		
+	</form>
 </body>
 </html>
