@@ -8,11 +8,40 @@
 <title>bookStore注册页面</title>
 <%--导入css --%>
 <link rel="stylesheet" href="css/main.css" type="text/css" />
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/my.js"></script>
 <script type="text/javascript">
 	function changeImage() {
 
-		document.getElementById("img").src = "${pageContext.request.contextPath}/imageCode?time="
-				+ new Date().getTime();
+		/* document.getElementById("img").src = "${pageContext.request.contextPath}/imageCode?time="
+				+ new Date().getTime(); */
+	}
+	function ckEmail() {
+		//得到邮箱对象
+		var email = document.getElementsByName("email")[0];
+		//获取XMLHttpReauest
+		var xhr = getXMLHttpRequest();
+		//设置处理结果
+		xhr.onreadystatechange = function() {
+			if(xhr.readyState == 4) {	//请求完毕
+				if(xhr.status == 200) {	//获取服务器状态,200表示正常
+					//得到font标签
+					var font = document.getElementsByTagName("font")[0];
+					if(xhr.responseText == "true") {
+						font.innerHTML = "邮箱已被使用";
+						font.style.color = "red";
+					} else {
+						font.innerHTML = "邮箱可以使用";
+						font.style.color = "green";
+					}
+				}
+			}
+		}
+		
+		//创建连接
+		xhr.open("get", "${pageContext.request.contextPath}/CkEmailServlet?email=" + email.value);
+		//发送请求
+		xhr.send(null);
+		//获取数据
 	}
 </script>
 </head>
@@ -36,7 +65,7 @@
 								<td style="text-align:right; width:20%">会员邮箱：</td>
 								<td style="width:40%">
 								<input type="text" class="textinput"
-									name="email" /></td>
+									name="email" onblur="ckEmail()" /></td>
 								<td><font color="#999999">请输入有效的邮箱地址</font></td>
 							</tr>
 							<tr>

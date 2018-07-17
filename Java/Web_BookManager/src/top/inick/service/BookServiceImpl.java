@@ -104,4 +104,15 @@ public class BookServiceImpl {
 		}
 		return null;
 	}
+
+	public List<Object> searchBookByName(String name) {
+		// TODO Auto-generated method stub
+		try {
+			return bookDao.searchBookByName(name);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
 }

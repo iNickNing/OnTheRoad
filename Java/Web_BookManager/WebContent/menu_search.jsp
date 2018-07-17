@@ -26,13 +26,15 @@
 
 			if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
 
-				var jsonObj = eval("(" + xmlhttp.responseText + ")");
-				
-				if(jsonObj.length>0){
+				//var jsonObj = eval("[" + xmlhttp.responseText + "]");
+				var str = xmlhttp.responseText;
+				var ss = eval("("+str+")");
+				//var ss = str.split(",");
+				if(ss.length>0){
 					document.getElementById("content").style.display="block";
-					for ( var i = 0; i < jsonObj.length; i++) {
+					for ( var i = 0; i < ss.length; i++) {
 						div.innerHTML += "<div onclick='fillNameValue(this)' onmouseover='changeBackground_over(this)' onmouseout='changeBackground_out(this)'>"
-								+ jsonObj[i] + "</div>"
+								+ ss[i] + "</div>"
 					}
 				}
 
@@ -97,7 +99,7 @@
 				<td style="text-align:right; padding-right:220px">
 				Search <input
 					type="text" name="name" class="inputtable" onkeyup="searchName();"
-					id="name" /> 
+					id="name" AUTOCOMPLETE="off" /> 
 					<input type="image" src="images/serchbutton.gif"
 					border="0" style="margin-bottom:-4px">
 				</td>
@@ -105,7 +107,7 @@
 		</table>
 
 	</form>
-</div>
+	
 <div id="content"
-	style="background-color:white;width:128px; text-align:left;margin-left:945px;color:black;float:left;margin-top: -20px;display: none">
+	style="background-color:white;width:128px; text-align:left;margin-left:945px;color:black;float:left;margin-top: -15px;display: none">
 </div>

@@ -36,9 +36,7 @@
 			xhr.open("get", "${pageContext.request.contextPath}/CkNameServlet?name=" + name);
 			//发送请求
 			xhr.send(null);
-			//获取数据
-			
-			//返回结果
+
 		}
 	</script>
 </body>

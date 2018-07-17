@@ -7,6 +7,7 @@ import java.util.List;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanHandler;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
+import org.apache.commons.dbutils.handlers.ColumnListHandler;
 import org.apache.commons.dbutils.handlers.ScalarHandler;
 
 import top.inick.domain.Book;
@@ -139,5 +140,11 @@ public class BookDaoImpl implements BookDao {
 		QueryRunner qr = new QueryRunner(C3P0Utils.getDataSource());
 		return qr.query("select * from book limit ?,?",new BeanListHandler<Book>(Book.class),(currentPage - 1) * pageSize, pageSize);
 		
+	}
+
+	public List<Object> searchBookByName(String name) throws SQLException {
+		QueryRunner qr = new QueryRunner(C3P0Utils.getDataSource());
+		
+		return qr.query("select name from book where name like ?", new ColumnListHandler(), "%"+name+"%");
 	}
 }

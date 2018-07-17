@@ -99,4 +99,24 @@
     <servlet-name>FindBookInfoServlet</servlet-name>
     <url-pattern>/FindBookInfoServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CkEmailServlet</display-name>
+    <servlet-name>CkEmailServlet</servlet-name>
+    <servlet-class>top.inick.web.servlet.CkEmailServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CkEmailServlet</servlet-name>
+    <url-pattern>/CkEmailServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>FindProductName</display-name>
+    <servlet-name>FindProductName</servlet-name>
+    <servlet-class>top.inick.web.servlet.FindProductName</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FindProductName</servlet-name>
+    <url-pattern>/findProductName</url-pattern>
+  </servlet-mapping>
 </web-app>
