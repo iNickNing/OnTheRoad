@@ -15,6 +15,10 @@ public class Demo01 {
 		System.out.println(new Date().toLocaleString());
 	}
 	
+//	@MyAnnotation(age=19,name="tom")
+	@MyAnnotation("aaa")
+	public void ff2() {}
+	
 	public void ll11iil1() {}
 }
 
