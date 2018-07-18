@@ -7,5 +7,5 @@ public interface AccountService {
 	 * @param toname	接收账户
 	 * @param money		转账金额
 	 */
-	public void transfer(String fromname, String toname, double money);
+	public void transfer(String fromname, String toname, double money)  throws Exception ;
 }
