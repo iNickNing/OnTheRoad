@@ -75,6 +75,11 @@ public class UploadServlet2 extends HttpServlet {
 	private void processUploadField(FileItem fileitem) {
 		// DONE 保存文件
 		try {
+			//拿到上传文件的名字
+			String filename = fileitem.getName();
+			if(filename == null || "".equals(filename)) {	//没上传文件就不存了
+				return;
+			}
 			//得到输入流
 			InputStream is = fileitem.getInputStream();
 			
@@ -84,8 +89,7 @@ public class UploadServlet2 extends HttpServlet {
 			if(!storeDirectory.exists()) {	//当文件不存在时新建
 				storeDirectory.mkdirs();
 			}
-			//拿到上传文件的名字
-			String filename = fileitem.getName();
+			
 			if(filename != null) {
 				filename = FilenameUtils.getName(filename);
 			}
