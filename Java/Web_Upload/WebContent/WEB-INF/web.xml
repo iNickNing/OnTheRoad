@@ -29,4 +29,14 @@
     <servlet-name>UploadServlet2</servlet-name>
     <url-pattern>/uploadServlet2</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DownServlet</display-name>
+    <servlet-name>DownServlet</servlet-name>
+    <servlet-class>top.inick.upload.DownServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DownServlet</servlet-name>
+    <url-pattern>/DownServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
