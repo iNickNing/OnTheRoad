@@ -1,23 +1,24 @@
 package top.inick.upload;
 
 import java.io.IOException;
-import java.io.InputStream;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.commons.fileupload.disk.DiskFileItemFactory;
+import org.apache.commons.fileupload.servlet.ServletFileUpload;
+
 /**
- * Servlet implementation class UploadServlet1
+ * Servlet implementation class UploadServlet2
  */
-public class UploadServlet1 extends HttpServlet {
+public class UploadServlet2 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public UploadServlet1() {
+    public UploadServlet2() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -27,22 +28,18 @@ public class UploadServlet1 extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-
-		/*
-		 * 由于表单提交数据的方式改为 multipart/form-data ,所以 getParamenter 拿不到值了
-		 * String name = request.getParameter("name");
-		String photoName= request.getParameter("photo");
-		
-		System.out.println(name);
-		System.out.println(photoName);*/
-		
-		InputStream is = request.getInputStream();
-		int len = 0;
-		byte[] b = new byte[1024];
-		while((len=is.read(b)) != -1) {
-			System.out.println(new String(b,0,len));
+		//要执行文件上传的操作
+		//判断表单是否支持文件的上传,
+		boolean isMultipartContent = ServletFileUpload.isMultipartContent(request);
+		if(!isMultipartContent) {
+			throw new RuntimeException("you form is not multipart/form-data");
 		}
-		is.close();
+		//创建一个DiskFileItemfactory工厂类
+		DiskFileItemFactory factory =  new DiskFileItemFactory();
+		//创建一个ServletFileUpload核心对象
+		
+		//解析request对象
+		
 	}
 
 	/**

@@ -19,4 +19,14 @@
     <servlet-name>UploadServlet1</servlet-name>
     <url-pattern>/uploadServlet1</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UploadServlet2</display-name>
+    <servlet-name>UploadServlet2</servlet-name>
+    <servlet-class>top.inick.upload.UploadServlet2</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UploadServlet2</servlet-name>
+    <url-pattern>/uploadServlet2</url-pattern>
+  </servlet-mapping>
 </web-app>
