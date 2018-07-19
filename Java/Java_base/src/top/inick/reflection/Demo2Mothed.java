@@ -66,7 +66,7 @@ public class Demo2Mothed {
 	@Test
 	public void test8() throws NoSuchMethodException, SecurityException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, InstantiationException {
 		Class clazz = Student.class;
-		Method[] m = clazz.getDeclaredMethods();	//包括本类公共的私有的,但不包括继承的
+		Method[] m = clazz.getDeclaredMethods();	//包括本类公共的私有的,但不包括继承的 
 		System.out.println(m.length);
 	}
 }
