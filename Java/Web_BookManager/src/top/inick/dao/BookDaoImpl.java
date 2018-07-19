@@ -32,8 +32,8 @@ public class BookDaoImpl implements BookDao {
 	 */
 	public void addBook(Book book) throws SQLException {
 		QueryRunner qr = new QueryRunner(C3P0Utils.getDataSource());
-		qr.update("INSERT INTO book(id, name, price, pnum, category, description) "
-				+ "VALUES(?, ?, ?, ?, ?, ?)", book.getId(), book.getName(), book.getPrice(), book.getPnum(), book.getCategory(), book.getDescription());
+		qr.update("INSERT INTO book(id, name, price, pnum, category, description, img_url) "
+				+ "VALUES(?, ?, ?, ?, ?, ?, ?)", book.getId(), book.getName(), book.getPrice(), book.getPnum(), book.getCategory(), book.getDescription(), book.getImg_url());
 	
 	}
 	

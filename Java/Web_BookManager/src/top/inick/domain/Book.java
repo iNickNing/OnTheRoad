@@ -7,6 +7,13 @@ public class Book {
 	private int pnum;
 	private String category;
 	private String description;
+	private String img_url;
+	public String getImg_url() {
+		return img_url;
+	}
+	public void setImg_url(String img_url) {
+		this.img_url = img_url;
+	}
 	public String getId() {
 		return id;
 	}
@@ -43,12 +50,16 @@ public class Book {
 	public void setDescription(String description) {
 		this.description = description;
 	}
+
+	public Book() {
+		super();
+	}
 	@Override
 	public String toString() {
 		return "Book [id=" + id + ", name=" + name + ", price=" + price + ", pnum=" + pnum + ", category=" + category
-				+ ", description=" + description + "]";
+				+ ", description=" + description + ", img_url=" + img_url + "]";
 	}
-	public Book(String id, String name, double price, int pnum, String category, String description) {
+	public Book(String id, String name, double price, int pnum, String category, String description, String img_url) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -56,9 +67,7 @@ public class Book {
 		this.pnum = pnum;
 		this.category = category;
 		this.description = description;
-	}
-	public Book() {
-		super();
+		this.img_url = img_url;
 	}
 	
 	
