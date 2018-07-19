@@ -60,7 +60,7 @@ public class Demo2Mothed {
 	public void test7() throws NoSuchMethodException, SecurityException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, InstantiationException {
 		Class clazz = Student.class;
 		Method[] m = clazz.getMethods();
-		System.out.println(m.length);
+		System.out.println(m.length); 
 	}
 	
 	@Test
