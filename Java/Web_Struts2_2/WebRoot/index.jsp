@@ -9,7 +9,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>Structs 2 入门</title>
+    <title>My JSP 'index.jsp' starting page</title>
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">    
@@ -21,8 +21,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-  	<%-- 在Structs2中,控制器会默认拦截扩展名为.action的请求, 除此之外,什么都不写也可以 --%>
-    <a href="${pageContext.request.contextPath }/hello.action">点击我</a>
-    <a href="${pageContext.request.contextPath }/hello">再点击我</a>
+    This is my JSP page. <br>
   </body>
 </html>

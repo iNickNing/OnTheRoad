@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	
+	<!-- 修改struts中的default.propertise的常量值 -->
+	<!-- 设置开发模式 -->
+	<constant name="struts.devMode" value="true" />
+
+	<!-- 修改struts中默认的请求后缀名 -->
+	<constant name="struts.action.extension" value="do"></constant>
+
+	<!-- 开启动态方法调用 -->
+	<constant name="struts.enable.DynamicMethodInvocation" value="true"></constant>
+	
+	<!-- 目前照抄 -->
+	<package name="p1" extends="struts-default">
+	<!-- 
+		
+		package元素,是定义一个struts的包,它是把配置文件按照面向对象的思想管理.
+			name属性:指定包的名称.注意包的名称在配置文件中唯一
+			extends属性:指定当前包的父包.它是按照面向对象的思想进行管理
+			abstract属性:把包声明一个抽象包.抽象包就是用来被进程的,只有没有action元素的包,才能被定义为抽象包
+			namespace属性:名称空间,当指定了名称空间之后,访问路径就变成了:
+							访问路径 = 名称空间+动作名称
+						当不指定改属性时.该属性有默认值,默认是"",注意不是"/"!!!!
+						名称空间的搜索顺序:
+							第一步:先去找对应的名称空间
+								在指定名称下找到了,就执行第二步
+								在指定的名称空间下没找到:按照名称空间结构向上追溯,一直找到根名称空间,只要任何一句找到了,就执行第二步
+							第二步:找动作名称
+								先在指定名称空间下,搜索对应的 动作名称,找到则执行
+								在指定名称空间下没有找到,则前往默认名称空间下找动作名字,注意:只找动作名称
+								
+	
+	 -->
+	 	<!-- 修改默认动作类 -->
+	 	<!-- <default-class-ref class="你自己的类"></default-class-ref> -->
+		<action name="hello" class="top.inick.web.action.HelloAction" method="sayHello">
+			<!-- action元素：是用于定义动作名称，动作类和动作方法的映射。以及当出现不同情况时前往指定的结果视图 
+				name属性：动作的名称。和jsp页面上的请求url中的名称对应起来。注意在此处不能写.action
+				class属性：指定动作类
+				method属性：指定要执行的动作方法
+				-->
+			
+			<result name="success">/success.jsp</result>
+		</action>
+		
+			<!-- 
+				result元素:配置逻辑结果视图
+					name属性:结果识图名称.与动作方法的返回值对应,当一致前往指定页面
+					type属性:结果视图类型,不写默认为 dispatcher
+						常用取值:
+							dispatcher:请求转发,默认值
+							redirect:重定向
+							chain: 转发到另一个动作
+								转发到同包(命名空间)下的一个动作
+								转发到不同包下的动作
+							redirectAction:重定向到另一个动作
+								不同包这么做
+								<result name="success">
+									<param name="namespace">/n2</param>
+									<param name="actionName">/action</param>
+								</result>
+								...
+					
+			
+			 -->
+		
+		<action name="world" class="top.inick.web.action.WorldAction" method="sayWorld">
+			<result name="success">/success.jsp</result>
+		</action>
+		
+		<!-- 第三种创建动作类的配置 -->
+		<action name="action3" class="top.inick.web.action.Demo3Action">
+			<result name="success">/success.jsp</result>
+		</action>
+		
+		<!-- 访问默认的动作类和动作方法 -->
+		<action name="defaultAction">
+			<result name="success">/success.jsp</result>
+		</action>
+		
+		<!-- 动作方法调用配置 -->
+<!-- 		<action name="addUser" class="top.inick.web.action.UserAction" method="addUser">
+			<result name="success">/addUser.jsp</result>
+		</action>
+		<action name="updateUser" class="top.inick.web.action.UserAction" method="updateUser">
+			<result name="success">/updateUser.jsp</result>
+		</action>
+		<action name="deleteUser" class="top.inick.web.action.UserAction" method="deleteUser">
+			<result name="success">/deleteUser.jsp</result>
+		</action>
+		<action name="findUser" class="top.inick.web.action.UserAction" method="findUser">
+			<result name="success">/findUser.jsp</result>
+		</action> -->
+		
+		<!-- 使用通配符,配置动作方法 -->
+		<!-- <action name="*" class="top.inick.web.action.UserAction" method="{1}">
+			<result name="success">/{1}.jsp</result>
+		</action> -->
+		
+		<!-- 动态方法调用配置 -->
+		<action name="user" class="top.inick.web.action.UserAction">
+			<result name="success">/success.jsp</result>
+		</action>
+		
+		<action name="result1" class="top.inick.web.result.Demo1Action">
+			<result name="success" type="chain">defaultAction</result>
+		</action>
+		
+		<action name="servletapi" class="top.inick.web.servletapi.Demo1Action">
+			<result name="success">/success.jsp</result>
+		</action>
+	</package>
+	
+	<package name="myDefault" extends="struts-default">
+		<!-- 自定义结果类型
+		在包中配置的结果视图只能在当前包或者子包使用
+	 -->
+		<result-types>
+			<result-type name="captcha" class="top.inick.web.result.CAPTCHAResult"></result-type>
+		</result-types>
+		
+		<global-results>
+			<!-- 结果视图的查找顺序,先查找当前动作类自己的,如果没有再去找全局结果视图中查找 -->
+			<result name="success" type="captcha">
+				<!-- 配置图片大小 -->
+				<param name="width">640</param>
+				<param name="height">480</param>
+			</result>
+		</global-results>
+	</package>
+	
+	<!-- 自定义结果类型的配置 -->
+	<package name="p3" extends="myDefault">
+
+		<action name="captchaAction">
+			<!-- 自定义结果类型
+				在action中配置的结果视图只能在当前action使用
+			 -->
+
+		</action>
+	
+	</package>
+		
+	
+</struts>
