@@ -34,3 +34,8 @@ start();
 
 
 
+> hibernate基本环境
+>
+> hibernate session
+>
+> hibernate 查询(增删改)
