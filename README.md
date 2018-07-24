@@ -45,3 +45,9 @@ start();
 > Maven
 >
 > Centos
+
+
+
+> SVN 
+>
+> hibernate 缓存
