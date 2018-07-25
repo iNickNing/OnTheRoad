@@ -53,3 +53,11 @@ start();
 > hibernate 缓存&三种状态
 >
 > hibernate 多表关系
+
+
+
+> hibernate HQL
+>
+> Hibernate 二级缓存
+>
+> Spring IoC
